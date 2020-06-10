@@ -1,3 +1,5 @@
+import random
+
 class User:
     def __init__(self, name):
         self.name = name
@@ -44,9 +46,17 @@ class SocialGraph:
         self.friendships = {}
         # !!!! IMPLEMENT ME
 
-        # Add users
+        # if the average number of friendships exceeds the number of total users (which is not possible),
+        # print an error message and return nothing
+        if avg_friendships >= num_users:
+            print('Error populating graph: the number of users must be greater than the average number of friendships')
+            return
 
-        # Create friendships
+        # add users
+        for i in range(1, num_users):
+            self.add_user()
+
+        # create friendships
 
     def get_all_social_paths(self, user_id):
         """
